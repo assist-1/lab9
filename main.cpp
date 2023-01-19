@@ -23,6 +23,7 @@ int main() {
 	char split[SPLIT_SIZE];
 	std::cout << "Enter the split:" << std::endl;
 	std::cin >> split;
+	
 	// file 1
 	const char *filename_1 = "FileResult_1";
 	const char *split_1    = "*";

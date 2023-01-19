@@ -10,7 +10,7 @@ void WriteToFile(array elements, char *split, const char *filename) {
 	while(elements[index_elem]) {
 		result << elements[index_elem++];
 		if(elements[index_elem]) {
-				int index_split = 0;
+			int index_split = 0;
 			while(split[index_split])
 				result << split[index_split++];
 		}
@@ -23,7 +23,7 @@ int main() {
 	char split[SPLIT_SIZE];
 	std::cout << "Enter the split:" << std::endl;
 	std::cin >> split;
-	
+
 	// file 1
 	const char *filename_1 = "FileResult_1";
 	const char *split_1    = "*";

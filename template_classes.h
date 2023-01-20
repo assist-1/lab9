@@ -13,6 +13,10 @@ struct result_of_search {
 
 template <typename type_for_search, typename limit>
 result_of_search<type_for_search, limit> search (type_for_search* array, limit length){
+    if (length < 1) {
+        std::cout << "array is empty";
+        exit (1);
+    }
     result_of_search<type_for_search, limit> answer;
     answer.max_element = (array[0]);
     answer.min_element = (array[0]);

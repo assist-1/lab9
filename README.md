@@ -1,1 +1,2 @@
-# НУГМАНОВ МУХАМЕД СКБ221 t.me/zzzhhhumaysynba
+# НУГМАНОВ МУХАМЕД СКБ221 -- ВАРИАНТ 2
+#### t.me/zzzhhhumaysynba

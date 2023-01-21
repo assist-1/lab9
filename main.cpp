@@ -63,16 +63,16 @@ void max_and_min(type* arr, const int size) {
 int main() {
 	const int length1 = 10;
 	int arr1[length1] = { 92, 17, 83, 15, 81, 56, 48, 29, 123, 289 };
-	max_and_min(arr1, length1);
+	max_and_min<int> (arr1, length1);
     const int length2 = 7;
     double arr2[length2] ={-8.357, -2.68, 1.23, 59.034, 81.84, -30.281, 0.033};
-    max_and_min(arr2, length2);
+    max_and_min<double> (arr2, length2);
     const int length3 = 6;
     float arr3[length3] = {3.99, 4.45, 0.87, 5.47, 2.03, 5.47};
-    max_and_min(arr3, length3);
+    max_and_min<float> (arr3, length3);
     const int length4 = 5;
     char arr4[length4] = {'k', 'h', 'm', 'h', 'm'};
-    max_and_min(arr4, length4);
+    max_and_min<char> (arr4, length4);
     //OUTPUT:
     //The maximum is: 289
     // The index of maximum is: 9

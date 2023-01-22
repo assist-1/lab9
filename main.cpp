@@ -18,7 +18,6 @@ class Point {
  public:
     int x;
     int y;
- public:
     void print();
 };
 

@@ -1,7 +1,4 @@
-//записи элементов массива в файл, разделяя их заданным пользователем строковым значением;
-
 #include <iostream>
-#include <map>
 #include <fstream>
 
 using std::cout;
@@ -25,27 +22,21 @@ class Point {
     void print();
 };
 
-/*
-void Point::print() {
-    cout << this->x << ' ' << this->y;
-}
-*/
 std::ostream& operator<<(std::ostream& out, Point p) {
-    out << '(' << p.x << ';' << p.y << ')';
+    out << '(' << p.x << "; " << p.y << ')';
     return out;
 }
 
 int main(int argc, char **argv) {
     if (argc == 1) {
-        std::cerr << "FILENAME?";
+        std::cerr << "Enter the file name";
         exit(EXIT_FAILURE);
     } else {
         int arr_int[SIZE] = {1, 2, 3, 4, 5};
         char arr_char[SIZE] = {'6', '7', '8', '9', '!'};
 
-        Point arr_point[SIZE];
+        Point arr_point[SIZE], temp;
         for (int i = 0; i < 5; ++i) {
-            Point temp;
             temp.x = i + 100;
             temp.y = i + 100;
             arr_point[i] = temp;
@@ -54,9 +45,9 @@ int main(int argc, char **argv) {
         std::ofstream fout;
         fout.open(argv[1]);
 
-        print<int>("MIEM", arr_int, fout);
-        print<char>("MIEM", arr_char, fout);
-        print<Point>("MIEM", arr_point, fout);
+        print<int>(" . ", arr_int, fout);
+        print<char>("; ", arr_char, fout);
+        print<Point>("***", arr_point, fout);
 
         fout.close();
 

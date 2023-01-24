@@ -7,8 +7,12 @@ void max_and_min(type* arr, const int size) {
 	type min = arr[0];
 	int ind_max = 0;
 	int ind_min = 0;
-	int ind_arr_max[size] = { 0 };
-	int ind_arr_min[size] = { 0 };
+	int ind_arr_max[size];
+	int ind_arr_min[size];
+	for (int i = 0; i < size; ++i) {
+		ind_arr_max[i] = -1;
+		ind_arr_min[i] = -1;
+	}
 	int number_max = 0;
 	int number_min = 0;
 	for (int i = 1; i < size; ++i) {
@@ -40,7 +44,7 @@ void max_and_min(type* arr, const int size) {
 	else {
         std::cout << "The indexes of maximum are: ";
 		for (int i = 0; i < size; ++i) {
-			if (ind_arr_max[i] > 0) {
+			if (ind_arr_max[i] > -1) {
 				std::cout << ind_arr_max[i] << ' ';
 			}
 		}
@@ -53,7 +57,7 @@ void max_and_min(type* arr, const int size) {
 	else {
         std::cout << "The indexes of minimum are: ";
 		for (int i = 0; i < size; ++i) {
-			if (ind_arr_min[i] > 0) {
+			if (ind_arr_min[i] > -1) {
 				std::cout << ind_arr_min[i] << ' ';
 			}
 		}
@@ -62,7 +66,7 @@ void max_and_min(type* arr, const int size) {
 }
 int main() {
 	const int length1 = 10;
-	int arr1[length1] = { 92, 17, 83, 15, 81, 56, 48, 29, 123, 289 };
+	int arr1[length1] = { 289, 17, 83, 15, 81, 56, 48, 29, 123, 92 };
 	max_and_min<int> (arr1, length1);
     const int length2 = 7;
     double arr2[length2] ={-8.357, -2.68, 1.23, 59.034, 81.84, -30.281, 0.033};
@@ -75,7 +79,7 @@ int main() {
     max_and_min<char> (arr4, length4);
     //OUTPUT:
     //The maximum is: 289
-    // The index of maximum is: 9
+    // The index of maximum is: 0
     // The minimum is: 15
     // The index of minimum is: 3
     // The maximum is: 81.84

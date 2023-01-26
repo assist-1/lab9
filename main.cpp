@@ -1,9 +1,10 @@
 #include <iostream>
+#include "classes.h"
 
 template <typename Type>
 void extr(const char *name, Type *mas, int len) {
-    Type Min =  10000000;
-    Type Max = -10000000;
+    Type Min = mas[0];
+    Type Max = mas[0];
     int indMin, indMax;
 
     for (int i = 0; i < len; i++) {
@@ -60,6 +61,15 @@ int main() {
     const char*  name_4 = "Mas №4";
     float mas_4[] = {9.333, 4.555, 10.9, 555.5, 333.333, -221.9};
     extr(name_4, mas_4, sizeof(mas_4)/sizeof(mas_4[0]));
+
+    
+    const char*  name_5 = "Mas №5";
+    Students mas_5[] = {18, 20, 23, 17, 25};
+    extr(name_5, mas_5, sizeof(mas_5)/sizeof(mas_5[0]));
+
+    const char*  name_6 = "Mas №6";
+    Students mas_6[] = {Students(18), Students(20), Students(30), Students(17), Students(16)};
+    extr(name_6, mas_6, sizeof(mas_6)/sizeof(mas_6[0]));
 
     return 0;
 }

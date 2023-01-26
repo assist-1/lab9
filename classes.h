@@ -2,13 +2,15 @@
 
 class Students {
     int age;
-
+    std::string name;
+    
 public:
-    Students(int n) {
+    Students(std::string nm, int n) {
+        name = nm;
         age = n;
     }
 
-    int get_age()  const { return age; }
+    std::string get_name()  const { return name; }
     friend bool operator>= (Students s1, Students s2);
     friend bool operator<= (Students s1, Students s2);
 };
@@ -22,5 +24,5 @@ bool operator<= (Students s1, Students s2) {
 }
 
 std::ostream& operator<< (std::ostream &out, const Students &tmp) {
-    return out << tmp.get_age();
+    return out << tmp.get_name();
 }

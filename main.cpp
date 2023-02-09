@@ -3,7 +3,7 @@
 using namespace std;
 
 template<typename mas, typename len>
-mas func(mas an[], len b)
+mas* func(mas an[], len b)
 {
 	int g = 0;
 	set <mas> st;
@@ -12,7 +12,7 @@ mas func(mas an[], len b)
 		st.insert(an[i]);
 	}
 	int siz = st.size();
-	int* q = new int[siz];
+	mas* q = new mas[siz];
 
 	for (auto& item : st)
 	{
@@ -24,19 +24,21 @@ mas func(mas an[], len b)
 	for (int i = 0; i < siz; i++) {
 		cout << q[i] << endl;
 	}
-	delete[] q;
 
-	return 0;
+	return q;
 }
 
 
 
 
 int main() {
-	int a[]{ 0,4,8,154,48,12,4,98 };
+	int a[]{ 0,4,8,154,48,12,4,98,8,48 };
 	int len = sizeof(a) / sizeof(a[0]);
 
+	int* A = func(a, len);
+	cout <<"--------------------------"<<endl
+		<<* (A + 1) << endl;
+	cout << A[5] << endl;
 
-	func(a, len);
 	return 0;
 }
